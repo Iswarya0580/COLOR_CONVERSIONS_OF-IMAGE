@@ -65,7 +65,7 @@ o	Save the final modified image to your local directory.
 ```
 import cv2
 image=cv2.imread('imagee.jpg',1)
-image=cv2.resize(image,(400,300))
+image=cv2.resize(image,(400,400))
 cv2.imshow('MOON',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()  
@@ -76,28 +76,21 @@ cv2.destroyAllWindows()
 
 ### 2)Draw Shapes and Add Text
 ```
-import cv2
-img = cv2.imread("imagee.jpg")
-start=(0,0)
-stop=(409,529)
-color=(100,255,100)
-thickness=10
-res_img=cv2.rectangle(img,start,stop,color,thickness)
-cv2.imshow('Image Window', res_img)
+image=cv2.imread('imagee.jpg')
+resr=cv2.rectangle(image,(0,0),(600,600),(0,0,250),12)
+cv2.imshow('Result',resr)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 ## Output:
-![Screenshot 2024-09-13 225331](https://github.com/user-attachments/assets/fb393a3f-b365-4907-99d4-437cccc338ca)
+![Screenshot 2024-09-21 132000](https://github.com/user-attachments/assets/a52447ed-fc45-4055-90b2-e8df2ff2cfcf)
+
 
 ## i)Circle
 ```
 import cv2
-
 img = cv2.imread("imagee.jpg")
-
 res=cv2.circle(img,(320,295),150,(255,0,0),10)
-
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -108,30 +101,23 @@ cv2.destroyAllWindows()
 ## ii)Line
 ```
 import cv2
-
 img = cv2.imread("imagee.jpg")
-res = cv2.line(img,(550,600),(0,0),(220,120,205),10)
-
+res = cv2.line(img,(550,600),(0,0),(0,0,255),10)
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 Selection deleted
 ## Output:
-![Screenshot 2024-09-13 230100](https://github.com/user-attachments/assets/ebcbc6b5-6bf1-4a55-b8ed-55c15f1485a6)
+![Screenshot 2024-09-21 140517](https://github.com/user-attachments/assets/dc397539-c6a1-4bb6-8875-8a704dce534d)
+
 
 ##  iii)Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
 import cv2
 image = cv2.imread("imagee.jpg")
-image = cv2.resize(image, (400, 300))
 text = "Stars and the Moon"
-position = (10, 50)
-font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 1
-color = (255, 255, 255) 
-thickness = 2
-res = cv2.putText(image, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
+res = cv2.putText(image, text, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0),5)
 cv2.imshow('WINDOW', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
