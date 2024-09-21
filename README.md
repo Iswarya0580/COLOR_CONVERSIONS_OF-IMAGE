@@ -76,28 +76,19 @@ cv2.destroyAllWindows()
 
 ### 2)Draw Shapes and Add Text
 ```
-import cv2
-img = cv2.imread("imagee.jpg")
-start=(0,0)
-stop=(409,529)
-color=(100,255,100)
-thickness=10
-res_img=cv2.rectangle(img,start,stop,color,thickness)
-cv2.imshow('Image Window', res_img)
+image=cv2.imread('imagee.jpg')
+resr=cv2.rectangle(image,(0,0),(600,600),(0,0,250),12)
+cv2.imshow('Result',resr)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 ## Output:
-![Screenshot 2024-09-13 225331](https://github.com/user-attachments/assets/fb393a3f-b365-4907-99d4-437cccc338ca)
-
+![alt text](<Screenshot 2024-09-21 132000.png>)
 ## i)Circle
 ```
 import cv2
-
 img = cv2.imread("imagee.jpg")
-
 res=cv2.circle(img,(320,295),150,(255,0,0),10)
-
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -108,30 +99,22 @@ cv2.destroyAllWindows()
 ## ii)Line
 ```
 import cv2
-
 img = cv2.imread("imagee.jpg")
-res = cv2.line(img,(550,600),(0,0),(220,120,205),10)
-
+res = cv2.line(img,(550,600),(0,0),(0,0,255),10)
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 Selection deleted
 ## Output:
-![Screenshot 2024-09-13 230100](https://github.com/user-attachments/assets/ebcbc6b5-6bf1-4a55-b8ed-55c15f1485a6)
+![alt text](<Screenshot 2024-09-21 140517.png>)
 
 ##  iii)Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
 import cv2
 image = cv2.imread("imagee.jpg")
-image = cv2.resize(image, (400, 300))
 text = "Stars and the Moon"
-position = (10, 50)
-font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 1
-color = (255, 255, 255) 
-thickness = 2
-res = cv2.putText(image, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
+res = cv2.putText(image, text, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0),5)
 cv2.imshow('WINDOW', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -144,7 +127,6 @@ cv2.destroyAllWindows()
 ```
 import cv2
 img = cv2.imread('imagee.jpg',1)
-img = cv2.resize(img,(300,200))
 cv2.imshow('Original Image',img)
 
 hsv2 = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
@@ -179,7 +161,6 @@ print(f"Pixel value at (100, 100): {pixel_value}")
 ```
 import cv2
 image = cv2.imread('imagee.jpg',1)
-image = cv2.resize(image,(400,300))
 cv2.imshow('ORIGINAL IMAGE',image)
 image[200, 200] = [255, 255, 255] 
 cv2.imshow('MODIFIED IMAGE', image)
@@ -207,7 +188,6 @@ cv2.destroyAllWindows()
 
 import cv2
 image = cv2.imread('imagee.jpg',1)
-image = cv2.resize(image,(400,300))
 x, y = 50, 50
 width, height = 100, 100
 roi = image[y:y + height, x:x + width]
@@ -223,7 +203,6 @@ cv2.destroyAllWindows()
 ```
 import cv2
 image = cv2.imread("imagee.jpg")
-image = cv2.resize(image,(300,200))
 res=cv2.rotate(image,cv2.ROTATE_180)
 cv2.imshow('ORIGINAL IMAGE',image)
 cv2.imshow('FLIPPED IMAGE', res)
@@ -238,7 +217,6 @@ cv2.destroyAllWindows()
 ```
 import cv2
 image = cv2.imread("imagee.jpg")
-image = cv2.resize(image,(300,200))
 res=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
 cv2.imshow('ORIGINAL IMAGE',image)
 cv2.imshow('FLIPPED IMAGE', res)
@@ -254,7 +232,6 @@ cv2.destroyAllWindows()
 ```
 import cv2
 img = cv2.imread("image.jpg")
-img = cv2.resize(img,(300,200))
 cv2.imwrite('boat_pic.jpg',img)
 ```
 ## Output:
